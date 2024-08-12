@@ -8,7 +8,7 @@ const CardEmpty = () => {
     <>
       <section id='card-section' className='container mx-auto max-w-[451px] min-h-[358px] mb-[150px] space-y-5 rounded-[30px] bg-white border border-border shadow-indicator p-[30px]'>
         <Image
-          src={'/images/empty.svg'}
+          src='/images/empty.svg'
           alt='empty-image'
           width={0}
           height={0}

@@ -22,7 +22,13 @@ export const transactionApi = apiSlice.injectEndpoints({
         method: "GET",
       }),
     }),
+    getTransactionDashboard: build.query({
+      query: () => ({
+        url: `/transaction`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useCheckAvailabilityMutation, useTransactionMutation, useGetTransactionsQuery } = transactionApi;
+export const { useCheckAvailabilityMutation, useTransactionMutation, useGetTransactionsQuery, useGetTransactionDashboardQuery } = transactionApi;
