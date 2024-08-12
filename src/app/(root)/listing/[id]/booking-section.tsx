@@ -42,7 +42,7 @@ function BookingSection({ id, slug, price }: BookingSectionProps) {
     }
 
     return {totalDays, subTotal, tax, grandTotal};
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startDate, endDate]);
 
   const handleBook = async () => {
@@ -54,7 +54,7 @@ function BookingSection({ id, slug, price }: BookingSectionProps) {
       };
       const res = await checkAvailability(data).unwrap();
       if (res.success) {
-        router.push(`/listing/${id}/checkout?start_date=${data.start_date}&end_date=${data.end_date}`);
+        router.push(`/listing/${slug}/checkout?start_date=${data.start_date}&end_date=${data.end_date}`);
       }
     } catch(error: any) {
       if (error.status === 401) {
@@ -118,7 +118,7 @@ function BookingSection({ id, slug, price }: BookingSectionProps) {
           value={moneyFormat.format(booking.grandTotal)}
         />
       </div>
-      <Button variant="default" className="mt-4" onClick={handleBook}disabled={isLoading}>
+      <Button variant="default" className="mt-4" onClick={handleBook} disabled={isLoading}>
         Book Now
       </Button>
       <div className="bg-gray-light p-5 rounded-[20px] flex items-center space-x-4">
